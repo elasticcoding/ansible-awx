@@ -1,0 +1,3 @@
+- name: this is a ansible-awx role based test job
+  debug:
+    msg: "Hello World!"
