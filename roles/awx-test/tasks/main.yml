@@ -1,3 +1,13 @@
-- name: this is a ansible-awx role based test job
-  debug:
-    msg: "Hello World!"
+- name: ensure a list of packages installed
+  yum:
+    name: "{{ packages }}"
+  vars:
+    packages:
+    - httpd
+    - httpd-tools
+
+- name: Start service httpd, if not started
+  service:
+    name: httpd
+    state: started
+    enabled: yes
