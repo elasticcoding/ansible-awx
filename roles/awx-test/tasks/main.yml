@@ -1,7 +1,7 @@
 - name: ensure a list of packages installed
   yum:
     name: "{{ packages }}"
-    become: yes
+  become: yes
   vars:
     packages:
     - httpd
@@ -12,4 +12,4 @@
     name: httpd
     state: started
     enabled: yes
-    become: yes
+  become: yes
